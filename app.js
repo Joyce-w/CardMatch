@@ -82,7 +82,7 @@ function handleCardClick(event) {
   // if(arr[0] === arr[1]){
   //   console.log('match');
 
-  arr.push({cardColor: selectedCard.className, target: event.target});  
+  arr.push({cardColor: selectedCard.className, target: event.target, matched: false});  
   console.log(arr);
   //limit 2 clicks
   clicks++;
