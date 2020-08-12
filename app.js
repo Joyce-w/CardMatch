@@ -1,12 +1,12 @@
 const gameContainer = document.getElementById("game");
 const div = document.getElementsByClassName('newDiv');
-const divs = document.querySelector('#game div')
-
+const startBtn = document.getElementById('start');
 let arr = [];
 let noMatch = [];
 
 
 let clicks = 0;
+
 
 const COLORS = [
   "red",
@@ -57,9 +57,12 @@ function createDivsForColors(colorArray) {
 
     // give it a class attribute for the value we are looping over
     newDiv.classList.add(color);
+    startBtn.addEventListener('click', function () {
 
-    // call a function handleCardClick when a div is clicked on
+      // call a function handleCardClick when a div is clicked on
     newDiv.addEventListener("click", handleCardClick);
+    })
+
 
     // append the div to the element with an id of game
     gameContainer.append(newDiv);
@@ -70,6 +73,7 @@ function createDivsForColors(colorArray) {
 
 // TODO: Implement this function!
 function handleCardClick(event) {
+  
   // you can use event.target to see which element was clicked
   const selectedCard = event.target;
   // let selectedCard = div.cardColor;
