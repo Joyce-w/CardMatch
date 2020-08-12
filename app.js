@@ -67,6 +67,7 @@ function createDivsForColors(colorArray) {
   }
 }
 
+
 // TODO: Implement this function!
 function handleCardClick(event) {
   // you can use event.target to see which element was clicked
@@ -74,45 +75,32 @@ function handleCardClick(event) {
   // let selectedCard = div.cardColor;
 
   selectedCard.style.backgroundColor = selectedCard.className
-  console.log("you just clicked", selectedCard.className);
 
-  //match 2 cards
-  // arr.push(selectedCard.className);
-  // console.log(arr)
-  // if(arr[0] === arr[1]){
-  //   console.log('match');
 
-  arr.push({cardColor: selectedCard.className, target: event.target});  
-  console.log(arr);
-  //limit 2 clicks
+  arr.push({cardColor: selectedCard.className, target: event.target, matched: false});  
+  console.log(arr)
+
   clicks++;
   console.log(clicks)
 
   if(clicks % 2 === 0){
     if(arr[0].cardColor !== arr[1].cardColor){
-      console.log(arr)
       setTimeout( function () {
         arr[0].target.style.background = 'none';
         arr[1].target.style.background = 'none';
+
         arr = [];
         
         }, 1000);
         
     }
     else{
+      arr[0].matched = true;
+      arr[1].matched = true;
       arr = [];
     }
     }
    
-  
-
-    
-    // setTimeout( function (){
-    
-    // div.style.backgroundColor = 'white';
-    // alert('reset card colors')
-
-    // }, 500)
 
 }
 
