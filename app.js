@@ -2,6 +2,8 @@ const gameContainer = document.getElementById("game");
 const div = document.getElementsByClassName('newDiv');
 const startBtn = document.getElementById('start');
 const resetBtn = document.getElementById('reset');
+const scoreSpan = document.querySelector('.score');
+var currentScore = document.querySelector('.currentScore')
 
 let arr = [];
 
@@ -82,16 +84,18 @@ function handleCardClick(event) {
 
   arr.push({cardColor: selectedCard.className, target: event.target, matched: false});  
   console.log(arr)
-
+  
   clicks++;
   console.log(clicks)
+  currentScore.innerHTML = clicks;
+  scoreSpan.append(currentScore);
+
 
   if(clicks % 2 === 0){
     if(arr[0].cardColor !== arr[1].cardColor){
       setTimeout( function () {
         arr[0].target.style.background = 'none';
         arr[1].target.style.background = 'none';
-
         arr = [];
         
         }, 1000);
