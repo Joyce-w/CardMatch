@@ -1,12 +1,11 @@
 const gameContainer = document.getElementById("game");
 const div = document.getElementsByClassName('newDiv');
 const startBtn = document.getElementById('start');
-let arr = [];
-let noMatch = [];
+const resetBtn = document.getElementById('reset');
 
+let arr = [];
 
 let clicks = 0;
-
 
 const COLORS = [
   "red",
@@ -108,16 +107,5 @@ function handleCardClick(event) {
 
 }
 
-
-
-
-
 // when the DOM loads
 createDivsForColors(shuffledColors);
-
-
-//show collection of cards
-
-//face down
-
-//if match than remain facing up 
